@@ -11,9 +11,14 @@ server.route({
     method: 'GET',
     path: '/',
     handler: (request, h) => {
-
         request.logger.info('In handler %s', request.path);
         return 'Hello, world!';
+    },
+    config: {
+      state: {
+        parse: false, // parse and store in request.state
+        failAction: 'ignore' // may also be 'ignore' or 'log'
+      }
     }
 });
 

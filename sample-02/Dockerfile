@@ -7,6 +7,7 @@ WORKDIR /usr/src/app
 COPY package.json package-lock.json* ./ 
 
 RUN npm install && npm cache clean --force
+RUN apk add --update curl
 
 COPY . .
 

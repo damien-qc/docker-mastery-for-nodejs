@@ -36,9 +36,18 @@ If we launch node directly inside the container, we have 3 options to handle shu
     >ENTRYPOINT ["/sbin/tini", "--"]
     >CMD ["node","./bin/www"]
 
-# Assignement
+# Assignement 1
 - Make a Dockerfile for an existing Node app
 - use ./assignement-dockerfile/Dockerfile
 - start with node 10.15 on alpine
 - install tini, start node with tini
 - copy package/lock files first, then npm, then clean, then copy
+
+# Assignement 2
+- use ./assignment-dockerfile/
+- run with tini built in, try to ctrl-c
+- run with tini built in, try to stop
+- remove ENTRYPOINT, rebuild
+- try to ctrl-c and stop
+- add --init to run command, try ctrl-c/stop
+- bonus: add signal watch code from ./sample-graceful-shutdown
